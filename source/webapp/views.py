@@ -18,11 +18,6 @@ def index_view(request):
 
 
 def article_view(request, pk):
-    # try:
-    #     article = Article.objects.get(pk=pk)
-    # except Article.DoesNotExist:
-    #     raise Http404
-
     article = get_object_or_404(Article, pk=pk)
 
     context = {'article': article}
@@ -38,7 +33,6 @@ def article_create_view(request):
     elif request.method == 'POST':
         form = ArticleForm(data=request.POST)
         if form.is_valid():
-            # article = Article.objects.create(**form.cleaned_data)
             article = Article.objects.create(
                 title=form.cleaned_data['title'],
                 text=form.cleaned_data['text'],
@@ -76,7 +70,6 @@ def article_update_view(request, pk):
     elif request.method == 'POST':
         form = ArticleForm(data=request.POST)
         if form.is_valid():
-            # Article.objects.filter(pk=pk).update(**form.cleaned_data)
             article.title = form.cleaned_data['title']
             article.text = form.cleaned_data['text']
             article.author = form.cleaned_data['author']

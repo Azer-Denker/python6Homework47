@@ -12,6 +12,10 @@ body {
     max-width: 900px;
 }
 
+.admin {
+    text-align: right;
+}
+
 .navbar {
     display: block;
     background: #6a7dff;
