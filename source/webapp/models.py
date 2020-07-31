@@ -3,9 +3,9 @@ from django.utils import timezone
 
 
 STATUS_CHOICES = [
-    ('new', 'Не модерировано'),
-    ('moderated', 'Модерировано'),
-    ('rejected', 'Отклонено')
+    ('new', 'Новый'),
+    ('moderated', 'В процесе'),
+    ('rejected', 'Сделанно')
 ]
 
 
